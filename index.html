@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: violet;
+        }
+        .calculadora {
+            background-color: #00916e;
+            border-radius: 32px;
+            box-shadow: 15px 10px 0px 5px #00000033;
+            padding: 15px;
+        }
+        .display {
+            background-color: #363636;
+            border-radius: 32px;
+            color: #fff;
+            margin-bottom: 20px;
+            padding: 16px;
+        }
+        .display div {
+            word-break: break-all;
+        }
+        .btn-custom {
+            background-color: #00916e;
+            border: none;
+            border-radius: 32px;
+            box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
+            font-size: 1.5em;
+            color: white;
+        }
+        .btn-custom:active {
+            background-color: #006f54;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="calculadora p-4">
+            <div class="display mb-4 p-3 text-right">
+                <div id="valor-anterior"></div>
+                <div id="valor-actual"></div>
+            </div>
+            <div class="row">
+                <button class="btn btn-custom col-6 mb-3" onclick="clearDisplay()">C</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="deleteDigit()">&larr;</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('/')">/</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('7')">7</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('8')">8</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('9')">9</button>
+                <button class="btn btn-custom col-3 mb-3 operador" onclick="appendCharacter('*')">X</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('4')">4</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('5')">5</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('6')">6</button>
+                <button class="btn btn-custom col-3 mb-3 operador" onclick="appendCharacter('-')">-</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('1')">1</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('2')">2</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('3')">3</button>
+                <button class="btn btn-custom col-3 mb-3 operador" onclick="appendCharacter('+')">+</button>
+                <button class="btn btn-custom col-6 mb-3" onclick="appendCharacter('0')">0</button>
+                <button class="btn btn-custom col-3 mb-3" onclick="appendCharacter('.')">.</button>
+                <button class="btn btn-custom col-3 mb-3 operador" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
